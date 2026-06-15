@@ -3,66 +3,26 @@ import { motion, AnimatePresence, useInView } from "framer-motion"
 import { Check, RotateCcw } from "lucide-react"
 import { Conversation, ConversationContent } from "@/components/ui/conversation"
 import { EASE } from "@/components/ui/reveal"
+import { useT } from "@/lib/i18n"
 import { cn } from "@/lib/utils"
 
-// troque pelos caminhos das fotos reais do seu estoque (arquivos em public/)
-const CARS = [
-  { image: "/carro-1.jpg", title: "Hatch 2021 · Completo", price: "R$ 68.900" },
-  { image: "/carro-2.jpg", title: "Sedan 2020 · Automático", price: "R$ 79.900" },
-  { image: "/carro-3.jpg", title: "SUV 2022 · Único dono", price: "R$ 112.900" },
-]
+// fotos reais do estoque (arquivos em public/) — fixas, zipadas com t("chat.cars")
+const CAR_IMAGES = ["/carro-1.jpg", "/carro-2.jpg", "/carro-3.jpg"]
 
 type Msg =
-  | { id: number; role: "them" | "me"; text: string; time: string }
-  | { id: number; role: "catalog"; time: string }
-  | { id: number; role: "booked"; text: string }
+  | { role: "them" | "me"; text: string; time: string }
+  | { role: "catalog"; time: string }
+  | { role: "booked"; time: string }
 
-const script: Msg[] = [
-  { id: 1, role: "them", text: "Oi, boa tarde!", time: "14:02" },
-  {
-    id: 2,
-    role: "me",
-    text: "Oii, boa tarde! Seja bem-vindo 😊 Sou do atendimento da loja. Posso te ajudar a achar um carro hoje?",
-    time: "14:02",
-  },
-  { id: 3, role: "them", text: "Pode sim! Queria dar uma olhada no que vocês têm", time: "14:03" },
-  {
-    id: 4,
-    role: "me",
-    text: "Show! Me conta rapidinho: tá procurando algo mais econômico, família ou pra trabalhar? Já te separo umas opções 👇",
-    time: "14:03",
-  },
-  { id: 5, role: "them", text: "Family, algo confortável", time: "14:03" },
-  { id: 6, role: "me", text: "Perfeito! Olha essas três que tão saindo bastante:", time: "14:04" },
-  { id: 7, role: "catalog", time: "14:04" },
-  { id: 8, role: "them", text: "Curti o SUV! Dá pra ver pessoalmente?", time: "14:05" },
-  {
-    id: 9,
-    role: "me",
-    text: "Com certeza 🙌 Você prefere durante a semana ou no fim de semana?",
-    time: "14:05",
-  },
-  { id: 10, role: "them", text: "Sábado de manhã é melhor pra mim", time: "14:06" },
-  {
-    id: 11,
-    role: "me",
-    text: "Fechou! Tenho sábado às 10h livre. Posso já deixar reservado no seu nome?",
-    time: "14:06",
-  },
-  { id: 12, role: "them", text: "Pode sim, obrigado!", time: "14:06" },
-  {
-    id: 13,
-    role: "me",
-    text: "Agendado! ✅ Te espero sábado às 10h pra ver o SUV. Qualquer coisa é só me chamar por aqui 😉",
-    time: "14:07",
-  },
-  { id: 14, role: "booked", text: "Visita agendada · sábado 10h · lead salvo no CRM" },
-]
+type Shown = { m: Msg; k: number }
 
 export function AmplyChat() {
+  const { t, lang } = useT()
+  const script = t("chat.script") as Msg[]
+
   const containerRef = useRef<HTMLDivElement>(null)
   const inView = useInView(containerRef, { once: true, amount: 0.35 })
-  const [visible, setVisible] = useState<Msg[]>([])
+  const [visible, setVisible] = useState<Shown[]>([])
   const [typing, setTyping] = useState(false)
   const [done, setDone] = useState(false)
   const [runId, setRunId] = useState(0)
@@ -70,6 +30,7 @@ export function AmplyChat() {
   useEffect(() => {
     if (!inView) return
     let i = 0
+    let key = 0
     const timers: ReturnType<typeof setTimeout>[] = []
     setVisible([])
     setDone(false)
@@ -84,18 +45,18 @@ export function AmplyChat() {
         timers.push(
           setTimeout(() => {
             setTyping(false)
-            setVisible((v) => [...v, msg])
+            setVisible((v) => [...v, { m: msg, k: key++ }])
             timers.push(setTimeout(run, 600))
           }, 1100),
         )
       } else {
-        setVisible((v) => [...v, msg])
+        setVisible((v) => [...v, { m: msg, k: key++ }])
         timers.push(setTimeout(run, 800))
       }
     }
     timers.push(setTimeout(run, 500))
     return () => timers.forEach(clearTimeout)
-  }, [inView, runId])
+  }, [inView, runId, lang, script])
 
   return (
     <motion.div
@@ -115,9 +76,9 @@ export function AmplyChat() {
           A
         </div>
         <div>
-          <p className="text-sm font-semibold">Sua Loja · Amply</p>
+          <p className="text-sm font-semibold">{t("chat.storeName")}</p>
           <p className="flex items-center gap-1 text-xs text-zinc-300">
-            <span className="h-1.5 w-1.5 rounded-full bg-white" /> online agora
+            <span className="h-1.5 w-1.5 rounded-full bg-white" /> {t("chat.online")}
           </p>
         </div>
       </div>
@@ -125,12 +86,12 @@ export function AmplyChat() {
       {/* corpo com auto-scroll */}
       <Conversation
         className="h-[520px] rounded-b-2xl bg-zinc-950"
-        aria-label="Demonstração de conversa do bot da Amply com um cliente"
+        aria-label="Amply bot demo conversation"
       >
         <ConversationContent className="flex flex-col gap-2">
           <AnimatePresence>
-            {visible.map((m) => (
-              <Bubble key={m.id} msg={m} />
+            {visible.map(({ m, k }) => (
+              <Bubble key={k} msg={m} />
             ))}
           </AnimatePresence>
           {typing && <Typing />}
@@ -147,7 +108,7 @@ export function AmplyChat() {
             onClick={() => setRunId((n) => n + 1)}
             className="flex items-center gap-1.5 rounded-full px-4 py-2 font-mono text-xs uppercase tracking-widest text-zinc-400 transition-colors hover:text-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400"
           >
-            <RotateCcw className="h-3.5 w-3.5" aria-hidden="true" /> repetir demo
+            <RotateCcw className="h-3.5 w-3.5" aria-hidden="true" /> {t("chat.replay")}
           </motion.button>
         )}
       </div>
@@ -156,6 +117,7 @@ export function AmplyChat() {
 }
 
 function Bubble({ msg }: { msg: Msg }) {
+  const { t } = useT()
   const anim = {
     initial: { opacity: 0, y: 10 },
     animate: { opacity: 1, y: 0 },
@@ -163,18 +125,19 @@ function Bubble({ msg }: { msg: Msg }) {
   }
 
   if (msg.role === "catalog") {
+    const cars = t("chat.cars") as { title: string; price: string }[]
     return (
       <motion.div
         {...anim}
         className="max-w-[88%] self-start rounded-2xl rounded-bl-sm bg-zinc-800 p-2"
       >
-        <p className="px-1 pb-2 pt-1 text-xs text-zinc-400">3 opções no seu perfil</p>
+        <p className="px-1 pb-2 pt-1 text-xs text-zinc-400">{t("chat.catalogHeader")}</p>
         <div className="flex flex-col gap-2">
-          {CARS.map((c) => (
+          {cars.map((c, i) => (
             <div key={c.title} className="flex items-center gap-3 rounded-xl bg-zinc-900/70 p-2">
               <div className="h-12 w-16 shrink-0 overflow-hidden rounded-lg bg-zinc-700">
                 <img
-                  src={c.image}
+                  src={CAR_IMAGES[i]}
                   alt={c.title}
                   width={64}
                   height={48}
@@ -203,7 +166,7 @@ function Bubble({ msg }: { msg: Msg }) {
         {...anim}
         className="mt-1 flex items-center gap-1.5 self-center rounded-full border border-white/25 bg-white/10 px-3 py-1.5 font-mono text-xs text-zinc-200"
       >
-        <Check className="h-3.5 w-3.5" aria-hidden="true" /> {msg.text}
+        <Check className="h-3.5 w-3.5" aria-hidden="true" /> {t("chat.booked")}
       </motion.div>
     )
   }
@@ -226,12 +189,13 @@ function Bubble({ msg }: { msg: Msg }) {
 }
 
 function Typing() {
+  const { t } = useT()
   return (
-    <div className="flex gap-1 self-start rounded-2xl bg-zinc-800 px-3 py-3" aria-label="Digitando">
+    <div className="flex gap-1 self-start rounded-2xl bg-zinc-800 px-3 py-3" aria-label={t("chat.typing")}>
       {[0, 1, 2].map((i) => (
         <motion.span
           key={i}
-          className="h-1.5 w-1.5 rounded-full bg-zinc-400"
+          className="h-1.5 w-1.5 rounded-full bg-zinc-300"
           animate={{ opacity: [0.3, 1, 0.3] }}
           transition={{ duration: 1.2, repeat: Infinity, delay: i * 0.2 }}
         />

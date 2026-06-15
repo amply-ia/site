@@ -1,13 +1,15 @@
 import { motion } from "framer-motion"
-import { WHATSAPP_URL } from "@/lib/whatsapp"
+import { waUrl } from "@/lib/whatsapp"
+import { useT } from "@/lib/i18n"
 
 export function WhatsAppButton() {
+  const { t } = useT()
   return (
     <motion.a
-      href={WHATSAPP_URL}
+      href={waUrl(t("contact.waText"))}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Falar com a Amply no WhatsApp"
+      aria-label={t("whatsapp.label")}
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.8 }}

@@ -1,3 +1,4 @@
+import { useMemo } from "react"
 import { motion } from "framer-motion"
 import {
   Home,
@@ -13,49 +14,41 @@ import { NavBar } from "@/components/ui/tubelight-navbar"
 import { Hero } from "@/components/ui/animated-hero"
 import { AmplyChat } from "@/components/ui/amply-chat"
 import { AmplyLogo } from "@/components/ui/amply-logo"
+import { LangToggle } from "@/components/ui/lang-toggle"
 import { WhatsAppButton } from "@/components/ui/whatsapp-button"
 import { FeaturesGrid, BeforeAfter, Results } from "@/components/ui/features"
 import { ContainerScroll } from "@/components/ui/container-scroll-animation"
 import { CrmDashboard } from "@/components/ui/crm-dashboard"
 import { Reveal, SectionHeading, stagger, rise, viewport } from "@/components/ui/reveal"
 import { Button } from "@/components/ui/button"
-import { WHATSAPP_URL } from "@/lib/whatsapp"
+import { waUrl } from "@/lib/whatsapp"
+import { useT } from "@/lib/i18n"
 import logoFooter from "@/assets/amply-logo.png"
 
-const navItems = [
-  { name: "Início", url: "#inicio", icon: Home },
-  { name: "Produto", url: "#produto", icon: LayoutGrid },
-  { name: "Quem somos", url: "#quem-somos", icon: Users },
-  { name: "Contato", url: "#contato", icon: Phone },
-]
-
-const passos = [
-  {
-    icon: MessagesSquare,
-    title: "Atende",
-    desc: "O lead chama no WhatsApp e o bot responde na hora, com o tom da sua loja.",
-  },
-  {
-    icon: LayoutGrid,
-    title: "Qualifica",
-    desc: "Entende o que a pessoa procura e mostra os carros do estoque, com foto e vídeo.",
-  },
-  {
-    icon: CalendarCheck,
-    title: "Agenda",
-    desc: "Marca a visita na agenda da equipe e confirma o horário com o cliente.",
-  },
-  {
-    icon: ClipboardList,
-    title: "Organiza",
-    desc: "Tudo cai no CRM: histórico, status e lembretes. Nada se perde.",
-  },
-]
+// ícones fixos por índice — os textos vêm do dicionário
+const stepIcons = [MessagesSquare, LayoutGrid, CalendarCheck, ClipboardList]
 
 export default function Landing() {
+  const { t, lang } = useT()
+
+  // memoizado por idioma: evita o scrollspy da navbar re-assinar a cada render
+  const navItems = useMemo(
+    () => [
+      { name: t("nav.home"), url: "#inicio", icon: Home },
+      { name: t("nav.product"), url: "#produto", icon: LayoutGrid },
+      { name: t("nav.about"), url: "#quem-somos", icon: Users },
+      { name: t("nav.contact"), url: "#contato", icon: Phone },
+    ],
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [lang],
+  )
+
+  const steps = t("product.steps") as { title: string; desc: string }[]
+
   return (
     <main className="min-h-screen overflow-x-clip bg-background text-foreground antialiased">
       <AmplyLogo />
+      <LangToggle />
       <NavBar items={navItems} />
       <WhatsAppButton />
 
@@ -67,9 +60,9 @@ export default function Landing() {
       {/* O PRODUTO */}
       <section id="produto" className="container mx-auto px-4 pb-16 scroll-mt-24">
         <SectionHeading
-          kicker="O produto"
-          title="Um sistema só pra vender mais carro"
-          desc='O bot na linha de frente, o CRM por trás. Do primeiro "oi" até a visita marcada, tudo automático e organizado.'
+          kicker={t("product.kicker")}
+          title={t("product.title")}
+          desc={t("product.subtitle")}
         />
         <motion.div
           variants={stagger}
@@ -78,8 +71,8 @@ export default function Landing() {
           viewport={viewport}
           className="mx-auto grid max-w-5xl gap-5 sm:grid-cols-2 lg:grid-cols-4"
         >
-          {passos.map((p, i) => {
-            const Icon = p.icon
+          {steps.map((p, i) => {
+            const Icon = stepIcons[i]
             return (
               <motion.div
                 key={p.title}
@@ -99,9 +92,9 @@ export default function Landing() {
       {/* DEMO DO BOT */}
       <section id="demo" className="container mx-auto px-4 pb-16 scroll-mt-24">
         <SectionHeading
-          kicker="Demo"
-          title="Veja o bot em ação"
-          desc='Do primeiro "oi" até a visita marcada — com a vitrine de carros e tudo salvo no CRM.'
+          kicker={t("demo.kicker")}
+          title={t("demo.title")}
+          desc={t("demo.subtitle")}
         />
         <AmplyChat />
       </section>
@@ -109,9 +102,9 @@ export default function Landing() {
       {/* RECURSOS */}
       <section id="recursos" className="container mx-auto px-4 pb-8 scroll-mt-24">
         <SectionHeading
-          kicker="Recursos"
-          title="Tudo que o Amply faz pela sua loja"
-          desc="Atendimento, estoque, agenda, campanhas e relacionamento — num sistema só."
+          kicker={t("features.kicker")}
+          title={t("features.title")}
+          desc={t("features.subtitle")}
         />
         <FeaturesGrid />
       </section>
@@ -122,13 +115,13 @@ export default function Landing() {
           titleComponent={
             <div className="mb-4">
               <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
-                O CRM por trás do bot
+                {t("crmSection.label")}
               </p>
               <h2 className="mt-4 text-balance text-4xl font-semibold tracking-tighter md:text-5xl">
-                Seu negócio inteiro num painel
+                {t("crmSection.title")}
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-muted-foreground md:text-lg">
-                Leads, estoque, agenda, conversas e faturamento — tudo organizado e em tempo real.
+                {t("crmSection.subtitle")}
               </p>
             </div>
           }
@@ -139,13 +132,13 @@ export default function Landing() {
 
       {/* ANTES x COM AMPLY */}
       <section className="container mx-auto px-4 pb-16">
-        <SectionHeading kicker="Comparativo" title="O que muda no seu dia a dia" />
+        <SectionHeading kicker={t("before.kicker")} title={t("before.title")} />
         <BeforeAfter />
       </section>
 
       {/* RESULTADO */}
       <section className="container mx-auto px-4 pb-16">
-        <SectionHeading kicker="Resultados" title="Resultado pra sua loja" />
+        <SectionHeading kicker={t("results.kicker")} title={t("results.title")} />
         <Results />
       </section>
 
@@ -154,26 +147,16 @@ export default function Landing() {
         <div className="container mx-auto grid max-w-5xl gap-10 px-4 md:grid-cols-2 md:items-center">
           <Reveal>
             <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
-              Quem somos
+              {t("about.label")}
             </p>
             <h2 className="mt-4 text-balance text-4xl font-semibold tracking-tighter md:text-5xl">
-              Tecnologia feita pra vender carro, não pra complicar.
+              {t("about.title")}
             </h2>
           </Reveal>
           <Reveal delay={0.12} className="space-y-4 text-muted-foreground">
-            <p>
-              A Amply nasceu da prática de quem vive o dia a dia de vendas. A gente viu o lead
-              esfriar por demora na resposta e resolveu mudar isso.
-            </p>
-            <p>
-              Construímos uma ferramenta que atende na hora, organiza cada conversa e deixa a
-              operação profissional — sem a loja precisar de uma equipe gigante pra dar conta do
-              WhatsApp.
-            </p>
-            <p className="font-medium text-foreground">
-              Atendimento instantâneo, no número oficial da sua loja, com tudo registrado pra sua
-              equipe fechar.
-            </p>
+            <p>{t("about.p1")}</p>
+            <p>{t("about.p2")}</p>
+            <p className="font-medium text-foreground">{t("about.p3")}</p>
           </Reveal>
         </div>
       </section>
@@ -181,18 +164,17 @@ export default function Landing() {
       {/* FALE CONOSCO */}
       <section id="contato" className="container mx-auto px-4 py-20 scroll-mt-24">
         <Reveal className="mx-auto max-w-3xl rounded-[2.5rem] bg-foreground px-6 py-20 text-center text-background md:px-14">
-          <p className="font-mono text-xs uppercase tracking-[0.25em] opacity-60">Fale conosco</p>
-          <h2 className="mt-4 text-balance text-4xl font-semibold tracking-tighter md:text-6xl">
-            Bora colocar seu showroom pra atender 24h?
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl opacity-70 md:text-lg">
-            Fala com a gente no WhatsApp. A gente te mostra a Amply funcionando e monta tudo pra
-            sua loja.
+          <p className="font-mono text-xs uppercase tracking-[0.25em] opacity-60">
+            {t("contact.label")}
           </p>
+          <h2 className="mt-4 text-balance text-4xl font-semibold tracking-tighter md:text-6xl">
+            {t("contact.title")}
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl opacity-70 md:text-lg">{t("contact.subtitle")}</p>
           <Button size="lg" className="mt-9 gap-3" asChild>
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+            <a href={waUrl(t("contact.waText"))} target="_blank" rel="noopener noreferrer">
               <MessageCircle className="h-5 w-5" aria-hidden="true" />
-              Fale conosco no WhatsApp
+              {t("contact.button")}
             </a>
           </Button>
         </Reveal>
@@ -212,7 +194,7 @@ export default function Landing() {
             <p className="font-display text-2xl font-semibold">Amply</p>
           </div>
           <nav
-            aria-label="Links do rodapé"
+            aria-label={t("footer.nav")}
             className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-muted-foreground"
           >
             {navItems.map((i) => (
@@ -222,10 +204,8 @@ export default function Landing() {
             ))}
           </nav>
           <div className="space-y-1.5 text-sm text-muted-foreground">
-            <p>CRM e bot com IA para concessionárias · amply.ia.br</p>
-            <p className="text-xs opacity-70">
-              © 2026 · WhatsApp é marca da Meta Platforms, sem vínculo com a Amply.
-            </p>
+            <p>{t("footer.tagline")}</p>
+            <p className="text-xs opacity-70">{t("footer.legal")}</p>
           </div>
         </div>
       </footer>

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { stagger as container, rise as item, viewport } from "@/components/ui/reveal"
+import { useT } from "@/lib/i18n"
 import {
   MessageCircle,
   Car,
@@ -17,70 +18,25 @@ import {
   X,
 } from "lucide-react"
 
-const features = [
-  {
-    icon: MessageCircle,
-    title: "Atendimento 24/7",
-    desc: "Responde na hora, de madrugada e fim de semana, de forma natural — e passa pro humano quando precisa.",
-  },
-  {
-    icon: Car,
-    title: "Mostra o estoque",
-    desc: "Filtra por marca, ano e preço, manda foto e vídeo do carro e sugere parecidos.",
-  },
-  {
-    icon: CalendarCheck,
-    title: "Agenda sozinho",
-    desc: "Respeita seu horário, evita choque de agenda e confirma com o cliente.",
-  },
-  {
-    icon: UserPlus,
-    title: "Captura todo contato",
-    desc: "Cada conversa vira lead cadastrado, com histórico salvo pra sempre.",
-  },
-  {
-    icon: Clock,
-    title: "Lista de espera",
-    desc: "Anota o carro que faltou e avisa o cliente assim que um parecido entra.",
-  },
-  {
-    icon: Cake,
-    title: "Aniversário automático",
-    desc: "Parabeniza a base sozinho, com o nome e a identidade da sua loja.",
-  },
-  {
-    icon: Megaphone,
-    title: "Campanhas em massa",
-    desc: "Dispara ofertas segmentadas com templates aprovados pela Meta.",
-  },
-  {
-    icon: RefreshCw,
-    title: "Reativa leads parados",
-    desc: "Identifica quem sumiu e reabre a conversa, sem trabalho manual.",
-  },
-  {
-    icon: BarChart3,
-    title: "Painel em tempo real",
-    desc: "Leads, visitas e conversões do dia, da semana e do mês num lugar só.",
-  },
-  {
-    icon: Boxes,
-    title: "Estoque fácil",
-    desc: "Cadastra com foto e vídeo, marca vendido/reservado e edita em segundos.",
-  },
-  {
-    icon: Users,
-    title: "Equipe toda junta",
-    desc: "Login por vendedor, histórico de quem atendeu, nada se perde.",
-  },
-  {
-    icon: Shield,
-    title: "Seguro e oficial",
-    desc: "Criptografia, LGPD, isolamento por loja e WhatsApp oficial da Meta.",
-  },
+// ícones fixos por índice — os textos vêm do dicionário (t("features.items"))
+const featureIcons = [
+  MessageCircle,
+  Car,
+  CalendarCheck,
+  UserPlus,
+  Clock,
+  Cake,
+  Megaphone,
+  RefreshCw,
+  BarChart3,
+  Boxes,
+  Users,
+  Shield,
 ]
 
 export function FeaturesGrid() {
+  const { t } = useT()
+  const items = t("features.items") as { title: string; desc: string }[]
   return (
     <motion.div
       variants={container}
@@ -89,8 +45,8 @@ export function FeaturesGrid() {
       viewport={viewport}
       className="mx-auto grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-3"
     >
-      {features.map((f) => {
-        const Icon = f.icon
+      {items.map((f, i) => {
+        const Icon = featureIcons[i]
         return (
           <motion.div
             key={f.title}
@@ -109,16 +65,9 @@ export function FeaturesGrid() {
   )
 }
 
-const rows: [string, string][] = [
-  ["Cliente manda WhatsApp 23h, só responde de manhã", "Resposta na hora, mesmo de madrugada"],
-  ['Vendedor passa o dia respondendo "tem esse carro?"', "Bot responde, vendedor foca em fechar"],
-  ["Cliente que queria o carro X foi embora", "Lista de espera avisa quando o carro chega"],
-  ["Aniversário do cliente esquecido", "Mensagem automática parabenizando"],
-  ["Sem como mandar promoção pra base", "Campanha em massa em 2 cliques"],
-  ["Vendedor sai e leva os contatos", "Tudo fica no sistema, da empresa"],
-]
-
 export function BeforeAfter() {
+  const { t } = useT()
+  const rows = t("before.rows") as { before: string; after: string }[]
   return (
     <motion.div
       variants={container}
@@ -128,16 +77,20 @@ export function BeforeAfter() {
       className="mx-auto max-w-4xl space-y-3"
     >
       <div className="grid grid-cols-2 gap-3 px-2 font-mono text-xs uppercase tracking-widest text-muted-foreground">
-        <span>Antes</span>
-        <span>Com Amply</span>
+        <span>{t("before.colBefore")}</span>
+        <span>{t("before.colAfter")}</span>
       </div>
-      {rows.map(([antes, depois]) => (
-        <motion.div key={depois} variants={item} className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+      {rows.map((row) => (
+        <motion.div
+          key={row.after}
+          variants={item}
+          className="grid grid-cols-1 gap-3 sm:grid-cols-2"
+        >
           <div className="flex items-start gap-2 rounded-xl border border-border bg-muted/40 p-4 text-sm text-muted-foreground">
-            <X className="mt-0.5 h-4 w-4 shrink-0 opacity-60" aria-hidden="true" /> {antes}
+            <X className="mt-0.5 h-4 w-4 shrink-0 opacity-60" aria-hidden="true" /> {row.before}
           </div>
           <div className="flex items-start gap-2 rounded-xl border border-foreground bg-foreground p-4 text-sm font-medium text-background">
-            <Check className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" /> {depois}
+            <Check className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" /> {row.after}
           </div>
         </motion.div>
       ))}
@@ -145,16 +98,9 @@ export function BeforeAfter() {
   )
 }
 
-const results = [
-  "Mais atendimentos sem contratar vendedor",
-  "Menos cliente perdido por demora",
-  "Mais visitas agendadas no fim de semana",
-  "Mais vendas recuperadas com a lista de espera",
-  "Relacionamento contínuo com a base",
-  "Equipe focada em vender, não em digitar",
-]
-
 export function Results() {
+  const { t } = useT()
+  const results = t("results.items") as string[]
   return (
     <motion.div
       variants={container}
