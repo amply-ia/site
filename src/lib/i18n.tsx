@@ -4,32 +4,45 @@ export type Lang = "pt" | "en"
 
 const dict = {
   pt: {
-    nav: { home: "Início", product: "Produto", about: "Quem somos", contact: "Contato" },
+    nav: { home: "Início", solutions: "Soluções", about: "Quem somos", contact: "Contato" },
     cta: { demo: "Agendar demonstração", how: "Ver como funciona" },
     hero: {
-      badge: "Bot + CRM para concessionárias",
-      titleStatic: "O vendedor",
-      rotating: ["incansável", "instantâneo", "atencioso", "inteligente", "24 horas"],
+      badge: "Tecnologia & marketing pra sua empresa",
+      titleStatic: "Sua empresa",
+      rotating: ["vendendo mais", "atendendo 24h", "1ª no Google", "crescendo"],
       subtitle:
-        "A Amply junta bot com IA e CRM num lugar só. Ele conversa com o lead na hora, manda foto e vídeo do carro, agenda a visita e organiza tudo pra sua equipe entrar só pra fechar.",
-      proof: ["Resposta em segundos", "Atendimento 24/7", "WhatsApp oficial Meta"],
+        "A Amply cuida da sua presença digital de ponta a ponta: bot de WhatsApp com IA e CRM, site profissional, tráfego pago no Meta e no Google e SEO. Você cuida do negócio — a gente faz a internet vender por você.",
+      proof: ["Bot + CRM", "Sites", "Meta & Google Ads", "SEO"],
+    },
+    solutions: {
+      kicker: "Soluções",
+      title: "Tudo que sua empresa precisa pra crescer online",
+      subtitle:
+        "Quatro frentes que trabalham juntas: atendimento automático, site profissional, anúncios e posicionamento no Google.",
+      more: "Ver detalhes",
+      items: [
+        { title: "Bot de WhatsApp + CRM", desc: "IA que atende, qualifica e agenda 24 horas por dia — com o CRM organizando cada lead.", href: "#produto" },
+        { title: "Sites profissionais", desc: "Sites rápidos, bonitos e feitos pra transformar visita em cliente.", href: "#sites" },
+        { title: "Tráfego pago", desc: "Campanhas no Meta Ads e no Google Ads pra trazer cliente novo todo dia.", href: "#trafego" },
+        { title: "SEO & posicionamento", desc: "Sua empresa na primeira página do Google, sem depender só de anúncio.", href: "#seo" },
+      ],
     },
     product: {
-      kicker: "O produto",
-      title: "Um sistema só pra vender mais carro",
+      kicker: "Solução 01 · Bot + CRM",
+      title: "Atendimento no WhatsApp que vende sozinho",
       subtitle:
-        'O bot na linha de frente, o CRM por trás. Do primeiro "oi" até a visita marcada, tudo automático e organizado.',
+        'O bot na linha de frente, o CRM por trás. Do primeiro "oi" até o agendamento, tudo automático e organizado.',
       steps: [
-        { title: "Atende", desc: "O lead chama no WhatsApp e o bot responde na hora, com o tom da sua loja." },
-        { title: "Qualifica", desc: "Entende o que a pessoa procura e mostra os carros do estoque, com foto e vídeo." },
-        { title: "Agenda", desc: "Marca a visita na agenda da equipe e confirma o horário com o cliente." },
+        { title: "Atende", desc: "O cliente chama no WhatsApp e o bot responde na hora, com o tom da sua empresa." },
+        { title: "Qualifica", desc: "Entende o que a pessoa procura e apresenta seus produtos e serviços, com foto e vídeo." },
+        { title: "Agenda", desc: "Marca a visita ou reunião na agenda da equipe e confirma o horário com o cliente." },
         { title: "Organiza", desc: "Tudo cai no CRM: histórico, status e lembretes. Nada se perde." },
       ],
     },
     demo: {
       kicker: "Demo",
       title: "Veja o bot em ação",
-      subtitle: 'Do primeiro "oi" até a visita marcada — com a vitrine de carros e tudo salvo no CRM.',
+      subtitle: 'Exemplo real numa concessionária: do primeiro "oi" até a visita marcada — com vitrine de produtos e tudo salvo no CRM.',
     },
     chat: {
       storeName: "Sua Loja · Amply",
@@ -62,21 +75,67 @@ const dict = {
     },
     features: {
       kicker: "Recursos",
-      title: "Tudo que o Amply faz pela sua loja",
-      subtitle: "Atendimento, estoque, agenda, campanhas e relacionamento — num sistema só.",
+      title: "Tudo que o bot da Amply faz pela sua empresa",
+      subtitle: "Atendimento, catálogo, agenda, campanhas e relacionamento — num sistema só.",
       items: [
         { title: "Atendimento 24/7", desc: "Responde na hora, de madrugada e fim de semana, de forma natural — e passa pro humano quando precisa." },
-        { title: "Mostra o estoque", desc: "Filtra por marca, ano e preço, manda foto e vídeo do carro e sugere parecidos." },
+        { title: "Mostra seu catálogo", desc: "Apresenta seus produtos e serviços com foto, vídeo e preço, filtrando pelo que o cliente procura." },
         { title: "Agenda sozinho", desc: "Respeita seu horário, evita choque de agenda e confirma com o cliente." },
         { title: "Captura todo contato", desc: "Cada conversa vira lead cadastrado, com histórico salvo pra sempre." },
-        { title: "Lista de espera", desc: "Anota o carro que faltou e avisa o cliente assim que um parecido entra." },
-        { title: "Aniversário automático", desc: "Parabeniza a base sozinho, com o nome e a identidade da sua loja." },
+        { title: "Lista de espera", desc: "Anota o que o cliente queria e avisa assim que fica disponível de novo." },
+        { title: "Aniversário automático", desc: "Parabeniza a base sozinho, com o nome e a identidade da sua empresa." },
         { title: "Campanhas em massa", desc: "Dispara ofertas segmentadas com templates aprovados pela Meta." },
         { title: "Reativa leads parados", desc: "Identifica quem sumiu e reabre a conversa, sem trabalho manual." },
         { title: "Painel em tempo real", desc: "Leads, visitas e conversões do dia, da semana e do mês num lugar só." },
-        { title: "Estoque fácil", desc: "Cadastra com foto e vídeo, marca vendido/reservado e edita em segundos." },
+        { title: "Catálogo fácil", desc: "Cadastra com foto e vídeo, marca vendido ou reservado e edita em segundos." },
         { title: "Equipe toda junta", desc: "Login por vendedor, histórico de quem atendeu, nada se perde." },
-        { title: "Seguro e oficial", desc: "Criptografia, LGPD, isolamento por loja e WhatsApp oficial da Meta." },
+        { title: "Seguro e oficial", desc: "Criptografia, LGPD, isolamento por empresa e WhatsApp oficial da Meta." },
+      ],
+    },
+    sites: {
+      kicker: "Solução 02 · Sites",
+      title: "Sites que transformam visita em cliente",
+      subtitle:
+        "Design profissional, carregamento rápido e cada seção pensada pra levar o visitante até o contato.",
+      mock: { url: "suaempresa.com.br", cta: "Chamar no WhatsApp" },
+      items: [
+        { title: "Design sob medida", desc: "Visual moderno, com a cara da sua marca. Nada de template genérico igual ao do concorrente." },
+        { title: "Rápido em qualquer tela", desc: "Carrega em segundos no celular e no computador — site lento perde venda." },
+        { title: "Feito pra converter", desc: "Textos, botões e seções guiando o visitante até o WhatsApp da sua empresa." },
+        { title: "Pronto pro Google", desc: "Estrutura técnica otimizada pra sua empresa ser encontrada desde o primeiro dia." },
+      ],
+    },
+    traffic: {
+      kicker: "Solução 03 · Tráfego pago",
+      title: "Anúncios que trazem cliente todo dia",
+      subtitle:
+        "A gente cria, gerencia e otimiza suas campanhas de ponta a ponta. Você só recebe o contato pronto pra fechar.",
+      platforms: [
+        { name: "Meta Ads", tag: "Instagram · Facebook · WhatsApp", desc: "Sua marca aparecendo todo dia pra quem tem o perfil do seu cliente. Campanhas de reconhecimento, mensagem e venda — com criativo e público testados." },
+        { name: "Google Ads", tag: "Pesquisa · YouTube · Display", desc: "Sua empresa no topo na hora exata em que alguém pesquisa o que você vende. Quem procura, encontra você primeiro." },
+      ],
+      items: [
+        { title: "Remarketing", desc: "Quem visitou seu site ou chamou no WhatsApp volta a ver sua marca até fechar." },
+        { title: "Otimização contínua", desc: "Testes de público e criativo toda semana: corta o que não performa, escala o que dá resultado." },
+        { title: "Relatórios claros", desc: "Quanto investiu, quantos contatos chegaram e quanto custou cada um. Sem mistério." },
+      ],
+    },
+    seo: {
+      kicker: "Solução 04 · SEO",
+      title: "Sua empresa na primeira página do Google",
+      subtitle:
+        "Posicionamento orgânico pra ser encontrado todos os dias por quem já procura o que você faz — sem pagar por clique.",
+      mock: {
+        query: "melhor empresa perto de mim",
+        result: "Sua Empresa — referência na sua região",
+        url: "suaempresa.com.br",
+        badge: "1º lugar",
+      },
+      items: [
+        { title: "SEO técnico", desc: "Velocidade, estrutura e código otimizados pro Google entender — e recomendar — o seu site." },
+        { title: "Palavras-chave certas", desc: "Conteúdo focado no que o seu cliente realmente digita na busca." },
+        { title: "Google Maps e buscas locais", desc: "Perfil da empresa otimizado pra aparecer no mapa e no “perto de mim”." },
+        { title: "Acompanhamento de posição", desc: "Relatório de ranking e tráfego: você vê sua empresa subindo no Google." },
       ],
     },
     before: {
@@ -86,8 +145,8 @@ const dict = {
       colAfter: "Com Amply",
       rows: [
         { before: "Cliente manda WhatsApp 23h, só responde de manhã", after: "Resposta na hora, mesmo de madrugada" },
-        { before: 'Vendedor passa o dia respondendo "tem esse carro?"', after: "Bot responde, vendedor foca em fechar" },
-        { before: "Cliente que queria o carro X foi embora", after: "Lista de espera avisa quando o carro chega" },
+        { before: 'Vendedor passa o dia respondendo "tem esse produto?"', after: "Bot responde, vendedor foca em fechar" },
+        { before: "Cliente que queria o produto X foi embora", after: "Lista de espera avisa quando ele chega" },
         { before: "Aniversário do cliente esquecido", after: "Mensagem automática parabenizando" },
         { before: "Sem como mandar promoção pra base", after: "Campanha em massa em 2 cliques" },
         { before: "Vendedor sai e leva os contatos", after: "Tudo fica no sistema, da empresa" },
@@ -95,11 +154,11 @@ const dict = {
     },
     results: {
       kicker: "Resultados",
-      title: "Resultado pra sua loja",
+      title: "Resultado pra sua empresa",
       items: [
-        "Mais atendimentos sem contratar vendedor",
+        "Mais atendimentos sem aumentar a equipe",
         "Menos cliente perdido por demora",
-        "Mais visitas agendadas no fim de semana",
+        "Mais visitas e reuniões agendadas",
         "Mais vendas recuperadas com a lista de espera",
         "Relacionamento contínuo com a base",
         "Equipe focada em vender, não em digitar",
@@ -107,10 +166,10 @@ const dict = {
     },
     about: {
       label: "Quem somos",
-      title: "Tecnologia feita pra vender carro, não pra complicar.",
-      p1: "A Amply nasceu da prática de quem vive o dia a dia de vendas. A gente viu o lead esfriar por demora na resposta e resolveu mudar isso.",
-      p2: "Construímos uma ferramenta que atende na hora, organiza cada conversa e deixa a operação profissional — sem a loja precisar de uma equipe gigante pra dar conta do WhatsApp.",
-      p3: "Atendimento instantâneo, no número oficial da sua loja, com tudo registrado pra sua equipe fechar.",
+      title: "Tecnologia e marketing feitos pra vender, não pra complicar.",
+      p1: "A Amply nasceu da prática de quem vive vendas no dia a dia. A gente viu empresa boa perder cliente por demora na resposta, site fraco e anúncio mal feito — e resolveu mudar isso.",
+      p2: "Hoje cuidamos da presença digital completa: atendimento automático com IA, sites profissionais, campanhas no Meta e no Google e posicionamento orgânico. Tudo integrado, com um time só.",
+      p3: "Sua empresa presente, respondendo e vendendo — 24 horas por dia.",
     },
     crmSection: {
       label: "O CRM por trás do bot",
@@ -148,14 +207,14 @@ const dict = {
     },
     contact: {
       label: "Fale conosco",
-      title: "Bora colocar seu showroom pra atender 24h?",
-      subtitle: "Fala com a gente no WhatsApp. A gente te mostra a Amply funcionando e monta tudo pra sua loja.",
+      title: "Bora colocar sua empresa pra vender 24h?",
+      subtitle: "Fala com a gente no WhatsApp. A gente entende o momento do seu negócio e monta o plano certo: bot, site, tráfego, SEO — ou tudo junto.",
       button: "Fale conosco no WhatsApp",
-      waText: "Olá! Quero conhecer a Amply pra minha loja.",
+      waText: "Olá! Quero conhecer as soluções da Amply pra minha empresa.",
     },
     footer: {
       nav: "Links do rodapé",
-      tagline: "CRM e bot com IA para concessionárias · amply.ia.br",
+      tagline: "Tecnologia e marketing digital pra sua empresa · amply.ia.br",
       legal: "© 2026 · WhatsApp é marca da Meta Platforms, sem vínculo com a Amply.",
     },
     theme: { toggle: "Alternar tema claro e escuro" },
@@ -164,32 +223,45 @@ const dict = {
   },
 
   en: {
-    nav: { home: "Home", product: "Product", about: "About", contact: "Contact" },
+    nav: { home: "Home", solutions: "Solutions", about: "About", contact: "Contact" },
     cta: { demo: "Book a demo", how: "See how it works" },
     hero: {
-      badge: "Bot + CRM for car dealerships",
-      titleStatic: "The salesperson",
-      rotating: ["tireless", "instant", "attentive", "smart", "24/7"],
+      badge: "Tech & marketing for your business",
+      titleStatic: "Your business",
+      rotating: ["selling more", "open 24/7", "#1 on Google", "growing"],
       subtitle:
-        "Amply combines an AI bot and a CRM in one place. It chats with the lead instantly, sends car photos and videos, books the visit, and organizes everything so your team just closes the deal.",
-      proof: ["Replies in seconds", "24/7 support", "Official Meta WhatsApp"],
+        "Amply handles your digital presence end to end: an AI WhatsApp bot with CRM, a professional website, paid traffic on Meta and Google, and SEO. You run the business — we make the internet sell for you.",
+      proof: ["Bot + CRM", "Websites", "Meta & Google Ads", "SEO"],
+    },
+    solutions: {
+      kicker: "Solutions",
+      title: "Everything your business needs to grow online",
+      subtitle:
+        "Four fronts working together: automated service, a professional website, paid ads and Google positioning.",
+      more: "See details",
+      items: [
+        { title: "WhatsApp bot + CRM", desc: "AI that answers, qualifies and books 24/7 — with a CRM organizing every lead.", href: "#produto" },
+        { title: "Professional websites", desc: "Fast, beautiful sites built to turn visitors into customers.", href: "#sites" },
+        { title: "Paid traffic", desc: "Meta Ads and Google Ads campaigns bringing in new customers every day.", href: "#trafego" },
+        { title: "SEO & positioning", desc: "Your business on Google's first page, without relying on ads alone.", href: "#seo" },
+      ],
     },
     product: {
-      kicker: "The product",
-      title: "One system to sell more cars",
+      kicker: "Solution 01 · Bot + CRM",
+      title: "WhatsApp service that sells on its own",
       subtitle:
-        'The bot on the front line, the CRM behind it. From the first "hi" to the booked visit, everything automatic and organized.',
+        'The bot on the front line, the CRM behind it. From the first "hi" to the booking, everything automatic and organized.',
       steps: [
-        { title: "Answers", desc: "The lead messages on WhatsApp and the bot replies instantly, in your store's voice." },
-        { title: "Qualifies", desc: "Understands what the person wants and shows cars from your inventory, with photos and videos." },
-        { title: "Schedules", desc: "Books the visit on your team's calendar and confirms the time with the customer." },
+        { title: "Answers", desc: "The customer messages on WhatsApp and the bot replies instantly, in your company's voice." },
+        { title: "Qualifies", desc: "Understands what the person wants and presents your products and services, with photos and videos." },
+        { title: "Schedules", desc: "Books the visit or meeting on your team's calendar and confirms the time with the customer." },
         { title: "Organizes", desc: "Everything lands in the CRM: history, status and reminders. Nothing gets lost." },
       ],
     },
     demo: {
       kicker: "Demo",
       title: "See the bot in action",
-      subtitle: 'From the first "hi" to the booked visit — with the car showcase and everything saved in the CRM.',
+      subtitle: 'A real example at a car dealership: from the first "hi" to the booked visit — with the product showcase and everything saved in the CRM.',
     },
     chat: {
       storeName: "Your Store · Amply",
@@ -222,21 +294,67 @@ const dict = {
     },
     features: {
       kicker: "Features",
-      title: "Everything Amply does for your store",
-      subtitle: "Support, inventory, scheduling, campaigns and relationships — in one system.",
+      title: "Everything Amply's bot does for your business",
+      subtitle: "Service, catalog, scheduling, campaigns and relationships — in one system.",
       items: [
-        { title: "24/7 support", desc: "Replies instantly, late at night and on weekends, naturally — and hands off to a human when needed." },
-        { title: "Shows your inventory", desc: "Filters by make, year and price, sends car photos and videos, and suggests similar ones." },
+        { title: "24/7 service", desc: "Replies instantly, late at night and on weekends, naturally — and hands off to a human when needed." },
+        { title: "Shows your catalog", desc: "Presents your products and services with photos, videos and prices, filtered by what the customer wants." },
         { title: "Books on its own", desc: "Respects your hours, avoids double-booking and confirms with the customer." },
         { title: "Captures every contact", desc: "Every chat becomes a saved lead, with history kept forever." },
-        { title: "Waiting list", desc: "Notes the car you didn't have and alerts the customer as soon as a similar one arrives." },
-        { title: "Automatic birthdays", desc: "Greets your customer base on its own, with your store's name and identity." },
+        { title: "Waiting list", desc: "Notes what the customer wanted and alerts them as soon as it's available again." },
+        { title: "Automatic birthdays", desc: "Greets your customer base on its own, with your company's name and identity." },
         { title: "Bulk campaigns", desc: "Sends segmented offers using Meta-approved templates." },
         { title: "Reactivates cold leads", desc: "Spots who went quiet and reopens the conversation, no manual work." },
         { title: "Real-time dashboard", desc: "Leads, visits and conversions for the day, week and month in one place." },
-        { title: "Easy inventory", desc: "Add cars with photos and videos, mark sold/reserved and edit in seconds." },
+        { title: "Easy catalog", desc: "Add items with photos and videos, mark sold or reserved and edit in seconds." },
         { title: "Whole team together", desc: "A login per salesperson, a record of who handled each lead, nothing lost." },
-        { title: "Secure and official", desc: "Encryption, data-privacy compliance, per-store isolation and Meta's official WhatsApp." },
+        { title: "Secure and official", desc: "Encryption, data-privacy compliance, per-company isolation and Meta's official WhatsApp." },
+      ],
+    },
+    sites: {
+      kicker: "Solution 02 · Websites",
+      title: "Websites that turn visitors into customers",
+      subtitle:
+        "Professional design, fast loading and every section built to guide the visitor to your contact.",
+      mock: { url: "yourbusiness.com", cta: "Chat on WhatsApp" },
+      items: [
+        { title: "Tailor-made design", desc: "A modern look with your brand's identity. No generic template that looks like your competitor's." },
+        { title: "Fast on any screen", desc: "Loads in seconds on phones and computers — slow sites lose sales." },
+        { title: "Built to convert", desc: "Copy, buttons and sections guiding visitors straight to your WhatsApp." },
+        { title: "Google-ready", desc: "An optimized technical structure so your business gets found from day one." },
+      ],
+    },
+    traffic: {
+      kicker: "Solution 03 · Paid traffic",
+      title: "Ads that bring in customers every day",
+      subtitle:
+        "We create, manage and optimize your campaigns end to end. You just receive contacts ready to close.",
+      platforms: [
+        { name: "Meta Ads", tag: "Instagram · Facebook · WhatsApp", desc: "Your brand in front of the right audience every day. Awareness, messaging and sales campaigns — with tested creatives and audiences." },
+        { name: "Google Ads", tag: "Search · YouTube · Display", desc: "Your business at the top the exact moment someone searches for what you sell. Whoever's looking finds you first." },
+      ],
+      items: [
+        { title: "Remarketing", desc: "People who visited your site or messaged you keep seeing your brand until they close." },
+        { title: "Constant optimization", desc: "Weekly audience and creative tests: cut what underperforms, scale what works." },
+        { title: "Clear reporting", desc: "How much you invested, how many contacts arrived and what each one cost. No mystery." },
+      ],
+    },
+    seo: {
+      kicker: "Solution 04 · SEO",
+      title: "Your business on Google's first page",
+      subtitle:
+        "Organic positioning so people already searching for what you do find you every day — without paying per click.",
+      mock: {
+        query: "best business near me",
+        result: "Your Business — the reference in your area",
+        url: "yourbusiness.com",
+        badge: "#1 spot",
+      },
+      items: [
+        { title: "Technical SEO", desc: "Speed, structure and code optimized so Google understands — and recommends — your site." },
+        { title: "The right keywords", desc: "Content focused on what your customer actually types into search." },
+        { title: "Google Maps & local search", desc: "An optimized business profile to show up on the map and in “near me” searches." },
+        { title: "Rank tracking", desc: "Ranking and traffic reports: watch your business climb on Google." },
       ],
     },
     before: {
@@ -246,8 +364,8 @@ const dict = {
       colAfter: "With Amply",
       rows: [
         { before: "Customer messages at 11pm, only gets a reply in the morning", after: "Instant reply, even late at night" },
-        { before: 'Salesperson spends the day answering "do you have this car?"', after: "The bot answers, the salesperson focuses on closing" },
-        { before: "The customer who wanted car X walked away", after: "The waiting list alerts them when the car arrives" },
+        { before: 'Salesperson spends the day answering "is this available?"', after: "The bot answers, the salesperson focuses on closing" },
+        { before: "The customer who wanted product X walked away", after: "The waiting list alerts them when it arrives" },
         { before: "Customer's birthday forgotten", after: "Automatic birthday message" },
         { before: "No way to send promos to your base", after: "Bulk campaign in 2 clicks" },
         { before: "A salesperson leaves and takes the contacts", after: "Everything stays in the system, owned by the company" },
@@ -255,11 +373,11 @@ const dict = {
     },
     results: {
       kicker: "Results",
-      title: "Results for your store",
+      title: "Results for your business",
       items: [
-        "More conversations without hiring",
+        "More conversations without growing the team",
         "Fewer customers lost to slow replies",
-        "More visits booked on weekends",
+        "More visits and meetings booked",
         "More sales recovered with the waiting list",
         "Ongoing relationship with your base",
         "A team focused on selling, not typing",
@@ -267,10 +385,10 @@ const dict = {
     },
     about: {
       label: "About us",
-      title: "Tech built to sell cars, not to complicate.",
-      p1: "Amply was born from the day-to-day reality of sales. We saw leads go cold from slow replies and decided to change that.",
-      p2: "We built a tool that replies instantly, organizes every conversation and makes the operation professional — without your store needing a huge team to keep up with WhatsApp.",
-      p3: "Instant service, on your store's official number, with everything recorded for your team to close.",
+      title: "Tech and marketing built to sell, not to complicate.",
+      p1: "Amply was born from the day-to-day reality of sales. We watched good businesses lose customers to slow replies, weak websites and poorly run ads — and decided to change that.",
+      p2: "Today we handle the whole digital presence: AI-powered service, professional websites, Meta and Google campaigns and organic positioning. All integrated, with a single team.",
+      p3: "Your business present, responding and selling — 24 hours a day.",
     },
     crmSection: {
       label: "The CRM behind the bot",
@@ -308,14 +426,14 @@ const dict = {
     },
     contact: {
       label: "Get in touch",
-      title: "Ready to put your showroom on the clock, 24/7?",
-      subtitle: "Talk to us on WhatsApp. We'll show you Amply in action and set everything up for your store.",
+      title: "Ready to get your business selling 24/7?",
+      subtitle: "Talk to us on WhatsApp. We'll understand where your business is and build the right plan: bot, website, ads, SEO — or all of it.",
       button: "Chat with us on WhatsApp",
-      waText: "Hi! I'd like to learn about Amply for my store.",
+      waText: "Hi! I'd like to learn about Amply's solutions for my business.",
     },
     footer: {
       nav: "Footer links",
-      tagline: "AI bot + CRM for car dealerships · amply.ia.br",
+      tagline: "Tech and digital marketing for your business · amply.ia.br",
       legal: "© 2026 · WhatsApp is a trademark of Meta Platforms, not affiliated with Amply.",
     },
     theme: { toggle: "Toggle light and dark theme" },

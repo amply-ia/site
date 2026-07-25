@@ -69,7 +69,7 @@ function Hero() {
         >
           <motion.div variants={item}>
             <a
-              href="#produto"
+              href="#solucoes"
               className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 font-mono text-xs uppercase tracking-widest text-muted-foreground transition-colors hover:border-foreground/40 hover:text-foreground"
             >
               {t("hero.badge")} <MoveRight className="h-3.5 w-3.5" aria-hidden="true" />
@@ -77,14 +77,14 @@ function Hero() {
           </motion.div>
 
           <motion.div variants={item} className="flex flex-col gap-5">
-            <h1 className="mx-auto max-w-4xl text-center text-5xl font-semibold tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
+            <h1 className="mx-auto w-full max-w-4xl text-center text-5xl font-semibold tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
               <span className="text-foreground">{t("hero.titleStatic")}</span>
               <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-4 md:pt-1">
                 &nbsp;
                 {titles.map((title, index) => (
                   <motion.span
                     key={index}
-                    className="absolute bg-gradient-to-r from-primary to-[hsl(210_100%_72%)] bg-clip-text font-semibold text-transparent"
+                    className="absolute inset-x-0 whitespace-nowrap bg-gradient-to-r from-primary to-[hsl(210_100%_72%)] bg-clip-text text-center font-semibold text-transparent"
                     initial={{ opacity: 0, y: -100 }}
                     transition={{ type: "spring", stiffness: 50 }}
                     animate={

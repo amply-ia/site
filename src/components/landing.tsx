@@ -17,6 +17,7 @@ import { AmplyLogo } from "@/components/ui/amply-logo"
 import { LangToggle } from "@/components/ui/lang-toggle"
 import { WhatsAppButton } from "@/components/ui/whatsapp-button"
 import { FeaturesGrid, BeforeAfter, Results } from "@/components/ui/features"
+import { SolutionsGrid, SitesShowcase, TrafficShowcase, SeoShowcase } from "@/components/ui/solutions"
 import { ContainerScroll } from "@/components/ui/container-scroll-animation"
 import { CrmDashboard } from "@/components/ui/crm-dashboard"
 import { Reveal, SectionHeading, stagger, rise, viewport } from "@/components/ui/reveal"
@@ -35,7 +36,7 @@ export default function Landing() {
   const navItems = useMemo(
     () => [
       { name: t("nav.home"), url: "#inicio", icon: Home },
-      { name: t("nav.product"), url: "#produto", icon: LayoutGrid },
+      { name: t("nav.solutions"), url: "#solucoes", icon: LayoutGrid },
       { name: t("nav.about"), url: "#quem-somos", icon: Users },
       { name: t("nav.contact"), url: "#contato", icon: Phone },
     ],
@@ -57,7 +58,17 @@ export default function Landing() {
         <Hero />
       </section>
 
-      {/* O PRODUTO */}
+      {/* SOLUÇÕES — visão geral das 4 frentes */}
+      <section id="solucoes" className="container mx-auto px-4 pb-20 scroll-mt-24">
+        <SectionHeading
+          kicker={t("solutions.kicker")}
+          title={t("solutions.title")}
+          desc={t("solutions.subtitle")}
+        />
+        <SolutionsGrid />
+      </section>
+
+      {/* SOLUÇÃO 01 · BOT + CRM */}
       <section id="produto" className="container mx-auto px-4 pb-16 scroll-mt-24">
         <SectionHeading
           kicker={t("product.kicker")}
@@ -140,6 +151,36 @@ export default function Landing() {
       <section className="container mx-auto px-4 pb-16">
         <SectionHeading kicker={t("results.kicker")} title={t("results.title")} />
         <Results />
+      </section>
+
+      {/* SOLUÇÃO 02 · SITES */}
+      <section id="sites" className="container mx-auto px-4 pb-16 scroll-mt-24">
+        <SectionHeading
+          kicker={t("sites.kicker")}
+          title={t("sites.title")}
+          desc={t("sites.subtitle")}
+        />
+        <SitesShowcase />
+      </section>
+
+      {/* SOLUÇÃO 03 · TRÁFEGO PAGO */}
+      <section id="trafego" className="container mx-auto px-4 pb-16 scroll-mt-24">
+        <SectionHeading
+          kicker={t("traffic.kicker")}
+          title={t("traffic.title")}
+          desc={t("traffic.subtitle")}
+        />
+        <TrafficShowcase />
+      </section>
+
+      {/* SOLUÇÃO 04 · SEO */}
+      <section id="seo" className="container mx-auto px-4 pb-16 scroll-mt-24">
+        <SectionHeading
+          kicker={t("seo.kicker")}
+          title={t("seo.title")}
+          desc={t("seo.subtitle")}
+        />
+        <SeoShowcase />
       </section>
 
       {/* QUEM SOMOS */}
