@@ -248,6 +248,21 @@ export default function Landing() {
             <p>{t("footer.tagline")}</p>
             <p className="text-xs opacity-70">{t("footer.legal")}</p>
           </div>
+
+          {/* dados cadastrais da empresa — razão social visível pro crawler da Meta */}
+          <address className="space-y-1 text-center text-xs not-italic text-muted-foreground opacity-60">
+            <p>{t("footer.company")}</p>
+            <p>{t("footer.address")}</p>
+            <p>
+              {t("footer.contactLabel")}{" "}
+              <a
+                href={`mailto:${t("footer.email")}`}
+                className="underline underline-offset-2 transition-colors hover:text-foreground"
+              >
+                {t("footer.email")}
+              </a>
+            </p>
+          </address>
         </div>
       </footer>
     </main>

@@ -15,9 +15,40 @@
       href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
+    <!--
+      Dados cadastrais no HTML estático: o site é uma SPA (o #root sai vazio do
+      servidor), e crawlers que não executam JS — como o facebookexternalhit da
+      Meta — não enxergariam a razão social renderizada pelo React.
+    -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Amply",
+        "legalName": "JOAO VITOR MEDEIROS DOS SANTOS",
+        "taxID": "59.736.692/0001-83",
+        "url": "https://www.amplyia.com.br",
+        "email": "joao@amplyia.com.br",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Rua Benedito Lopes Vieira, 144",
+          "addressLocality": "Itapetininga",
+          "addressRegion": "SP",
+          "postalCode": "18209-360",
+          "addressCountry": "BR"
+        }
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
+    <noscript>
+      <address style="text-align: center; font-size: 12px; font-style: normal">
+        JOAO VITOR MEDEIROS DOS SANTOS — CNPJ 59.736.692/0001-83<br />
+        Rua Benedito Lopes Vieira, 144 — Vila Regina, Itapetininga/SP — CEP 18209-360<br />
+        contato: <a href="mailto:joao@amplyia.com.br">joao@amplyia.com.br</a>
+      </address>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
