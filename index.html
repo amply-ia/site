@@ -42,13 +42,22 @@
   </head>
   <body>
     <div id="root"></div>
-    <noscript>
-      <address style="text-align: center; font-size: 12px; font-style: normal">
-        JOAO VITOR MEDEIROS DOS SANTOS — CNPJ 59.736.692/0001-83<br />
-        Rua Benedito Lopes Vieira, 144 — Vila Regina, Itapetininga/SP — CEP 18209-360<br />
-        contato: <a href="mailto:joao@amplyia.com.br">joao@amplyia.com.br</a>
-      </address>
-    </noscript>
+    <!--
+      Dados cadastrais em HTML estático, FORA do #root (o React nunca sobrescreve).
+      Precisa ser texto visível de verdade no documento servido: o verificador da
+      Meta procura a razão social no site e não executa JavaScript, então nada
+      renderizado pelo React — nem JSON-LD, nem <noscript> — serve para ele.
+    -->
+    <address
+      class="border-t border-border px-4 pb-32 pt-8 text-center text-xs not-italic leading-relaxed text-muted-foreground sm:pb-8"
+    >
+      JOAO VITOR MEDEIROS DOS SANTOS — CNPJ 59.736.692/0001-83<br />
+      Rua Benedito Lopes Vieira, 144 — Vila Regina, Itapetininga/SP — CEP 18209-360<br />
+      contato:
+      <a class="underline underline-offset-2" href="mailto:joao@amplyia.com.br"
+        >joao@amplyia.com.br</a
+      >
+    </address>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

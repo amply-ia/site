@@ -223,7 +223,7 @@ export default function Landing() {
 
       {/* RODAPÉ */}
       <footer className="border-t border-border">
-        <div className="container mx-auto flex flex-col items-center gap-6 px-4 py-14 pb-32 text-center sm:pb-14">
+        <div className="container mx-auto flex flex-col items-center gap-6 px-4 py-14 text-center">
           <div className="flex items-center gap-3">
             <img
               src={logoFooter}
@@ -248,21 +248,12 @@ export default function Landing() {
             <p>{t("footer.tagline")}</p>
             <p className="text-xs opacity-70">{t("footer.legal")}</p>
           </div>
-
-          {/* dados cadastrais da empresa — razão social visível pro crawler da Meta */}
-          <address className="space-y-1 text-center text-xs not-italic text-muted-foreground opacity-60">
-            <p>{t("footer.company")}</p>
-            <p>{t("footer.address")}</p>
-            <p>
-              {t("footer.contactLabel")}{" "}
-              <a
-                href={`mailto:${t("footer.email")}`}
-                className="underline underline-offset-2 transition-colors hover:text-foreground"
-              >
-                {t("footer.email")}
-              </a>
-            </p>
-          </address>
+          {/*
+            Os dados cadastrais (razão social, CNPJ, endereço) NÃO ficam aqui:
+            eles vivem em HTML estático no index.html, fora do #root. O
+            verificador da Meta não executa JavaScript, então qualquer coisa
+            renderizada pelo React é invisível pra ele.
+          */}
         </div>
       </footer>
     </main>
