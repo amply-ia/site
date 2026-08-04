@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Termos de Uso — Amply IA</title>
+    <meta
+      name="description"
+      content="Termos de Uso da plataforma Amply IA: condições de contratação, responsabilidades das partes, propriedade intelectual e rescisão."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --background: 0 0% 4%;
+        --foreground: 0 0% 98%;
+        --card: 0 0% 7%;
+        --muted: 0 0% 15%;
+        --muted-foreground: 0 0% 64%;
+        --border: 0 0% 18%;
+        --primary: 228 100% 71%;
+        color-scheme: dark;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: hsl(var(--background));
+        color: hsl(var(--muted-foreground));
+        font-family: Inter, system-ui, -apple-system, sans-serif;
+        font-size: 16px;
+        line-height: 1.75;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+      .wrap {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      header.top {
+        border-bottom: 1px solid hsl(var(--border));
+      }
+      header.top .wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+      .brand {
+        font-family: "Bricolage Grotesque", Inter, sans-serif;
+        font-weight: 700;
+        font-size: 22px;
+        color: hsl(var(--foreground));
+        text-decoration: none;
+        letter-spacing: -0.02em;
+      }
+      .back {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: hsl(var(--muted-foreground));
+        text-decoration: none;
+      }
+      .back:hover {
+        color: hsl(var(--foreground));
+      }
+      main {
+        padding: 56px 0 72px;
+      }
+      .kicker {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.25em;
+        color: hsl(var(--muted-foreground));
+        margin: 0 0 16px;
+      }
+      h1 {
+        font-family: "Bricolage Grotesque", Inter, sans-serif;
+        font-weight: 700;
+        font-size: clamp(32px, 6vw, 48px);
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+        color: hsl(var(--foreground));
+        margin: 0 0 20px;
+      }
+      .vigencia {
+        display: inline-block;
+        border: 1px solid hsl(var(--border));
+        border-radius: 999px;
+        padding: 6px 14px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        color: hsl(var(--muted-foreground));
+        margin-bottom: 40px;
+      }
+      h2 {
+        font-family: "Bricolage Grotesque", Inter, sans-serif;
+        font-weight: 600;
+        font-size: clamp(21px, 3.4vw, 26px);
+        line-height: 1.25;
+        letter-spacing: -0.02em;
+        color: hsl(var(--foreground));
+        margin: 56px 0 16px;
+        padding-top: 32px;
+        border-top: 1px solid hsl(var(--border));
+      }
+      h2:first-of-type {
+        border-top: 0;
+        padding-top: 0;
+        margin-top: 0;
+      }
+      h3 {
+        font-family: Inter, sans-serif;
+        font-weight: 600;
+        font-size: 17px;
+        color: hsl(var(--foreground));
+        margin: 32px 0 10px;
+      }
+      p {
+        margin: 0 0 16px;
+      }
+      ul {
+        margin: 0 0 16px;
+        padding-left: 22px;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+      li::marker {
+        color: hsl(0 0% 40%);
+      }
+      strong {
+        color: hsl(var(--foreground));
+        font-weight: 600;
+      }
+      a {
+        color: hsl(var(--primary));
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+      .card {
+        border: 1px solid hsl(var(--border));
+        background: hsl(var(--card));
+        border-radius: 16px;
+        padding: 24px;
+        margin: 0 0 16px;
+      }
+      .card p:last-child,
+      .card ul:last-child {
+        margin-bottom: 0;
+      }
+      .dados {
+        display: grid;
+        gap: 4px;
+        font-size: 15px;
+      }
+      .dados span {
+        color: hsl(var(--foreground));
+      }
+      footer.bottom {
+        border-top: 1px solid hsl(var(--border));
+        padding: 32px 0 48px;
+        text-align: center;
+        font-size: 13px;
+      }
+      footer.bottom nav {
+        margin-bottom: 14px;
+        display: flex;
+        gap: 24px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      footer.bottom nav a {
+        color: hsl(var(--muted-foreground));
+        text-decoration: none;
+      }
+      footer.bottom nav a:hover {
+        color: hsl(var(--foreground));
+      }
+      footer.bottom address {
+        font-style: normal;
+        font-size: 12px;
+        line-height: 1.7;
+      }
+      @media (max-width: 600px) {
+        main {
+          padding: 40px 0 56px;
+        }
+        h2 {
+          margin-top: 44px;
+          padding-top: 26px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="top">
+      <div class="wrap">
+        <a class="brand" href="/">Amply</a>
+        <a class="back" href="/">voltar ao site</a>
+      </div>
+    </header>
+
+    <main>
+      <div class="wrap">
+        <p class="kicker">Documento legal</p>
+        <h1>Termos de Uso</h1>
+        <p class="vigencia">Vigente desde 4 de agosto de 2026 · versão 1.0</p>
+
+        <p>
+          Estes Termos de Uso regulam a contratação e a utilização da plataforma
+          <strong>Amply IA</strong>, disponibilizada por
+          <strong>59.736.692 JOAO VITOR MEDEIROS DOS SANTOS</strong>, inscrita no CNPJ sob o nº
+          59.736.692/0001-83, com sede na Rua Benedito Lopes Vieira, 144 — Vila Regina,
+          Itapetininga/SP, CEP 18209-360, doravante denominada <strong>Amply</strong>.
+        </p>
+        <p>
+          Ao contratar ou utilizar a plataforma, a empresa contratante (doravante
+          <strong>Cliente</strong>) declara ter lido, compreendido e aceito integralmente as
+          condições abaixo.
+        </p>
+
+        <h2>1. Objeto</h2>
+        <p>
+          A Amply disponibiliza ao Cliente, em modelo de software como serviço (SaaS), uma
+          plataforma composta por sistema de gestão de relacionamento com clientes (CRM) e
+          atendimento automatizado com inteligência artificial integrado à API do WhatsApp
+          Business.
+        </p>
+        <p>A plataforma permite, entre outras funcionalidades:</p>
+        <ul>
+          <li>Atendimento automatizado de mensagens recebidas pelo WhatsApp;</li>
+          <li>Cadastro e gestão de leads, veículos e agendamentos;</li>
+          <li>Envio de campanhas e mensagens de relacionamento;</li>
+          <li>Transcrição de mensagens de áudio;</li>
+          <li>Relatórios e indicadores de atendimento.</li>
+        </ul>
+        <p>
+          A contratação não implica cessão de titularidade do software, mas apenas a concessão de
+          licença de uso, não exclusiva e intransferível, durante a vigência do contrato.
+        </p>
+
+        <h2>2. Cadastro e conta de acesso</h2>
+        <p>
+          O acesso à plataforma depende de cadastro com informações verdadeiras, completas e
+          atualizadas. O Cliente é o único responsável pela guarda e pelo sigilo das credenciais de
+          acesso concedidas a si e à sua equipe, respondendo por todas as operações realizadas com
+          suas credenciais.
+        </p>
+        <p>
+          O Cliente deve comunicar imediatamente a Amply em caso de suspeita de uso não autorizado
+          da conta.
+        </p>
+
+        <h2>3. Obrigações da Amply</h2>
+        <ul>
+          <li>Disponibilizar a plataforma conforme as funcionalidades contratadas;</li>
+          <li>
+            Empregar medidas técnicas e administrativas razoáveis para a segurança e a integridade
+            dos dados hospedados;
+          </li>
+          <li>
+            Prestar suporte técnico pelos canais e nos horários informados no momento da
+            contratação;
+          </li>
+          <li>
+            Tratar os dados pessoais recebidos do Cliente na qualidade de operadora, conforme a
+            <a href="/privacidade">Política de Privacidade</a>;
+          </li>
+          <li>
+            Comunicar previamente, sempre que possível, manutenções programadas que impliquem
+            indisponibilidade.
+          </li>
+        </ul>
+
+        <h2>4. Obrigações do Cliente</h2>
+        <ul>
+          <li>
+            Utilizar a plataforma em conformidade com a legislação aplicável, especialmente a LGPD
+            (Lei nº 13.709/2018), o Código de Defesa do Consumidor e o Marco Civil da Internet;
+          </li>
+          <li>
+            <strong>Obter as bases legais necessárias</strong> — inclusive o consentimento, quando
+            exigido — para o tratamento dos dados dos seus clientes-finais e para o envio de
+            comunicações promocionais;
+          </li>
+          <li>
+            Cumprir integralmente as políticas da Meta aplicáveis ao WhatsApp Business, incluindo a
+            Política de Comércio e a Política de Mensagens, respondendo por eventuais penalidades
+            decorrentes de descumprimento;
+          </li>
+          <li>Fornecer informações verdadeiras sobre veículos, preços e condições ofertadas;</li>
+          <li>
+            Responsabilizar-se pelo conteúdo cadastrado na plataforma e pelas mensagens enviadas em
+            seu nome;
+          </li>
+          <li>Manter em dia os pagamentos referentes ao plano contratado.</li>
+        </ul>
+
+        <h2>5. Uso aceitável</h2>
+        <p>É expressamente vedado ao Cliente:</p>
+        <ul>
+          <li>
+            Enviar mensagens não solicitadas em massa (<em>spam</em>) ou a contatos que não tenham
+            relação prévia com a empresa;
+          </li>
+          <li>Utilizar a plataforma para fins ilícitos, fraudulentos ou enganosos;</li>
+          <li>
+            Tentar acessar dados de outros clientes, burlar mecanismos de segurança ou realizar
+            engenharia reversa do sistema;
+          </li>
+          <li>
+            Compartilhar credenciais com terceiros não autorizados ou revender o acesso à plataforma
+            sem autorização expressa;
+          </li>
+          <li>
+            Sobrecarregar intencionalmente a infraestrutura por meio de automações não previstas no
+            contrato.
+          </li>
+        </ul>
+        <p>
+          O descumprimento destas regras autoriza a Amply a suspender o acesso imediatamente, sem
+          prejuízo da rescisão contratual e da apuração de perdas e danos.
+        </p>
+
+        <h2>6. Proteção de dados pessoais</h2>
+        <p>
+          No tratamento dos dados dos clientes-finais, o Cliente atua como
+          <strong>controlador</strong> e a Amply como <strong>operadora</strong>, nos termos da
+          LGPD. As condições completas estão descritas na
+          <a href="/privacidade">Política de Privacidade</a>, que integra estes Termos para todos os
+          efeitos.
+        </p>
+
+        <h2>7. Propriedade intelectual</h2>
+        <p>
+          Todo o software, código-fonte, interface, identidade visual, marca, documentação e demais
+          elementos da plataforma são de titularidade exclusiva da Amply e estão protegidos pela
+          legislação de propriedade intelectual. A contratação não transfere quaisquer desses
+          direitos ao Cliente.
+        </p>
+        <p>
+          Os dados inseridos pelo Cliente e os dados de seus clientes-finais permanecem de
+          titularidade do Cliente, que poderá solicitar sua exportação nos termos do item 10.
+        </p>
+
+        <h2>8. Disponibilidade e suporte</h2>
+        <p>
+          A Amply empreenderá esforços razoáveis para manter a plataforma disponível de forma
+          contínua, mas não garante funcionamento ininterrupto ou isento de falhas. A
+          indisponibilidade poderá decorrer de manutenções, falhas de terceiros dos quais o serviço
+          depende — como a API do WhatsApp, provedores de inteligência artificial e serviços de
+          hospedagem — ou de eventos de força maior.
+        </p>
+
+        <h2>9. Limitação de responsabilidade</h2>
+        <p>A Amply não se responsabiliza por:</p>
+        <ul>
+          <li>
+            Conteúdo das mensagens enviadas pelo Cliente ou por sua equipe, nem pelas negociações
+            comerciais realizadas por meio da plataforma;
+          </li>
+          <li>
+            Suspensão, bloqueio ou banimento do número de WhatsApp do Cliente por decisão da Meta;
+          </li>
+          <li>
+            Indisponibilidade ou alteração unilateral de serviços de terceiros essenciais à
+            operação;
+          </li>
+          <li>
+            Decisões comerciais tomadas pelo Cliente com base em respostas geradas por inteligência
+            artificial, que possuem natureza auxiliar e devem ser conferidas pela equipe do Cliente;
+          </li>
+          <li>Danos indiretos, lucros cessantes ou perda de oportunidade de negócio.</li>
+        </ul>
+        <p>
+          Nos limites permitidos pela legislação aplicável, a responsabilidade total da Amply
+          perante o Cliente fica limitada ao valor efetivamente pago pelo Cliente nos 12 (doze)
+          meses anteriores ao evento que originou a demanda.
+        </p>
+
+        <h2>10. Vigência e rescisão</h2>
+        <p>
+          O contrato vigora por prazo indeterminado a partir da ativação da conta, salvo condição
+          diversa acordada por escrito.
+        </p>
+        <p>
+          Qualquer das partes pode rescindir o contrato mediante comunicação com antecedência
+          mínima de 30 (trinta) dias. A Amply poderá rescindir imediatamente em caso de
+          descumprimento destes Termos, uso indevido da plataforma ou inadimplemento superior a 30
+          (trinta) dias.
+        </p>
+        <p>
+          Encerrado o contrato, o Cliente poderá solicitar a exportação dos seus dados no prazo de
+          30 (trinta) dias contados do encerramento. Transcorrido esse prazo, os dados poderão ser
+          eliminados, ressalvadas as hipóteses de guarda obrigatória previstas em lei.
+        </p>
+
+        <h2>11. Preços e pagamento</h2>
+        <p>
+          Os valores, a periodicidade e a forma de pagamento são os definidos na proposta comercial
+          aceita pelo Cliente. O atraso no pagamento poderá acarretar suspensão do acesso, após
+          comunicação prévia. Reajustes serão informados com antecedência mínima de 30 (trinta)
+          dias.
+        </p>
+
+        <h2>12. Alterações destes Termos</h2>
+        <p>
+          A Amply poderá alterar estes Termos a qualquer tempo. Alterações relevantes serão
+          comunicadas ao Cliente pelos canais de contato cadastrados, com antecedência mínima de 30
+          (trinta) dias. A continuidade do uso da plataforma após esse prazo implica concordância
+          com a nova versão.
+        </p>
+
+        <h2>13. Disposições gerais e foro</h2>
+        <p>
+          A eventual tolerância quanto ao descumprimento de qualquer cláusula não constitui novação
+          nem renúncia de direitos. Caso alguma disposição seja considerada inválida, as demais
+          permanecerão em pleno vigor.
+        </p>
+        <p>
+          Estes Termos são regidos pelas leis da República Federativa do Brasil. Fica eleito o
+          <strong>foro da Comarca de Itapetininga, Estado de São Paulo</strong>, para dirimir
+          quaisquer controvérsias decorrentes destes Termos, com renúncia a qualquer outro, por mais
+          privilegiado que seja.
+        </p>
+
+        <h2>14. Contato</h2>
+        <div class="card">
+          <div class="dados">
+            <p style="margin: 0"><span>59.736.692 JOAO VITOR MEDEIROS DOS SANTOS</span></p>
+            <p style="margin: 0">CNPJ 59.736.692/0001-83</p>
+            <p style="margin: 0">
+              Rua Benedito Lopes Vieira, 144 — Vila Regina, Itapetininga/SP — CEP 18209-360
+            </p>
+            <p style="margin: 0">
+              E-mail: <a href="mailto:joao@amplyia.com.br">joao@amplyia.com.br</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bottom">
+      <div class="wrap">
+        <nav>
+          <a href="/">Início</a>
+          <a href="/privacidade">Política de Privacidade</a>
+          <a href="/termos">Termos de Uso</a>
+        </nav>
+        <address>
+          59.736.692 JOAO VITOR MEDEIROS DOS SANTOS — CNPJ 59.736.692/0001-83<br />
+          Rua Benedito Lopes Vieira, 144 — Vila Regina, Itapetininga/SP — CEP 18209-360<br />
+          contato: <a href="mailto:joao@amplyia.com.br">joao@amplyia.com.br</a>
+        </address>
+      </div>
+    </footer>
+  </body>
+</html>

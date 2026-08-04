@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Política de Privacidade — Amply IA</title>
+    <meta
+      name="description"
+      content="Política de Privacidade da Amply IA: como tratamos dados pessoais na plataforma de CRM e atendimento via WhatsApp, em conformidade com a LGPD (Lei 13.709/2018)."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --background: 0 0% 4%;
+        --foreground: 0 0% 98%;
+        --card: 0 0% 7%;
+        --muted: 0 0% 15%;
+        --muted-foreground: 0 0% 64%;
+        --border: 0 0% 18%;
+        --primary: 228 100% 71%;
+        color-scheme: dark;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: hsl(var(--background));
+        color: hsl(var(--muted-foreground));
+        font-family: Inter, system-ui, -apple-system, sans-serif;
+        font-size: 16px;
+        line-height: 1.75;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+      .wrap {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      header.top {
+        border-bottom: 1px solid hsl(var(--border));
+      }
+      header.top .wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+      .brand {
+        font-family: "Bricolage Grotesque", Inter, sans-serif;
+        font-weight: 700;
+        font-size: 22px;
+        color: hsl(var(--foreground));
+        text-decoration: none;
+        letter-spacing: -0.02em;
+      }
+      .back {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: hsl(var(--muted-foreground));
+        text-decoration: none;
+      }
+      .back:hover {
+        color: hsl(var(--foreground));
+      }
+      main {
+        padding: 56px 0 72px;
+      }
+      .kicker {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.25em;
+        color: hsl(var(--muted-foreground));
+        margin: 0 0 16px;
+      }
+      h1 {
+        font-family: "Bricolage Grotesque", Inter, sans-serif;
+        font-weight: 700;
+        font-size: clamp(32px, 6vw, 48px);
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+        color: hsl(var(--foreground));
+        margin: 0 0 20px;
+      }
+      .vigencia {
+        display: inline-block;
+        border: 1px solid hsl(var(--border));
+        border-radius: 999px;
+        padding: 6px 14px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        color: hsl(var(--muted-foreground));
+        margin-bottom: 40px;
+      }
+      h2 {
+        font-family: "Bricolage Grotesque", Inter, sans-serif;
+        font-weight: 600;
+        font-size: clamp(21px, 3.4vw, 26px);
+        line-height: 1.25;
+        letter-spacing: -0.02em;
+        color: hsl(var(--foreground));
+        margin: 56px 0 16px;
+        padding-top: 32px;
+        border-top: 1px solid hsl(var(--border));
+      }
+      h2:first-of-type {
+        border-top: 0;
+        padding-top: 0;
+        margin-top: 0;
+      }
+      h3 {
+        font-family: Inter, sans-serif;
+        font-weight: 600;
+        font-size: 17px;
+        color: hsl(var(--foreground));
+        margin: 32px 0 10px;
+      }
+      p {
+        margin: 0 0 16px;
+      }
+      ul {
+        margin: 0 0 16px;
+        padding-left: 22px;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+      li::marker {
+        color: hsl(var(--muted) / 1);
+        color: hsl(0 0% 40%);
+      }
+      strong {
+        color: hsl(var(--foreground));
+        font-weight: 600;
+      }
+      a {
+        color: hsl(var(--primary));
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+      .card {
+        border: 1px solid hsl(var(--border));
+        background: hsl(var(--card));
+        border-radius: 16px;
+        padding: 24px;
+        margin: 0 0 16px;
+      }
+      .card p:last-child,
+      .card ul:last-child {
+        margin-bottom: 0;
+      }
+      .dados {
+        display: grid;
+        gap: 4px;
+        font-size: 15px;
+      }
+      .dados span {
+        color: hsl(var(--foreground));
+      }
+      .terceiro {
+        border-top: 1px solid hsl(var(--border));
+        padding-top: 18px;
+        margin-top: 18px;
+      }
+      .terceiro:first-child {
+        border-top: 0;
+        padding-top: 0;
+        margin-top: 0;
+      }
+      .terceiro h3 {
+        margin-top: 0;
+      }
+      .tag {
+        display: inline-block;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        border: 1px solid hsl(var(--border));
+        border-radius: 999px;
+        padding: 2px 9px;
+        margin-left: 8px;
+        vertical-align: 2px;
+        color: hsl(var(--muted-foreground));
+      }
+      footer.bottom {
+        border-top: 1px solid hsl(var(--border));
+        padding: 32px 0 48px;
+        text-align: center;
+        font-size: 13px;
+      }
+      footer.bottom nav {
+        margin-bottom: 14px;
+        display: flex;
+        gap: 24px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      footer.bottom nav a {
+        color: hsl(var(--muted-foreground));
+        text-decoration: none;
+      }
+      footer.bottom nav a:hover {
+        color: hsl(var(--foreground));
+      }
+      footer.bottom address {
+        font-style: normal;
+        font-size: 12px;
+        line-height: 1.7;
+      }
+      @media (max-width: 600px) {
+        main {
+          padding: 40px 0 56px;
+        }
+        h2 {
+          margin-top: 44px;
+          padding-top: 26px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="top">
+      <div class="wrap">
+        <a class="brand" href="/">Amply</a>
+        <a class="back" href="/">voltar ao site</a>
+      </div>
+    </header>
+
+    <main>
+      <div class="wrap">
+        <p class="kicker">Documento legal</p>
+        <h1>Política de Privacidade</h1>
+        <p class="vigencia">Vigente desde 4 de agosto de 2026 · versão 1.0</p>
+
+        <p>
+          Esta Política de Privacidade descreve como a <strong>Amply IA</strong> coleta, utiliza,
+          armazena, compartilha e protege dados pessoais no âmbito da sua plataforma de CRM e
+          atendimento automatizado via WhatsApp, em conformidade com a
+          <strong>Lei nº 13.709/2018 (Lei Geral de Proteção de Dados Pessoais — LGPD)</strong>.
+        </p>
+        <p>
+          Ao utilizar nossos serviços ou interagir com um atendimento operado pela nossa plataforma,
+          você declara estar ciente das práticas descritas neste documento.
+        </p>
+
+        <h2>1. Quem somos</h2>
+        <div class="card">
+          <div class="dados">
+            <p style="margin: 0">
+              <span>59.736.692 JOAO VITOR MEDEIROS DOS SANTOS</span> (nome fantasia: Amply IA)
+            </p>
+            <p style="margin: 0">CNPJ 59.736.692/0001-83</p>
+            <p style="margin: 0">
+              Rua Benedito Lopes Vieira, 144 — Vila Regina, Itapetininga/SP — CEP 18209-360
+            </p>
+            <p style="margin: 0">
+              E-mail: <a href="mailto:joao@amplyia.com.br">joao@amplyia.com.br</a>
+            </p>
+            <p style="margin: 0">Site: <a href="https://www.amplyia.com.br">amplyia.com.br</a></p>
+          </div>
+        </div>
+        <p>
+          A Amply IA é uma plataforma de software como serviço (SaaS) que oferece CRM e atendimento
+          automatizado com inteligência artificial via WhatsApp para concessionárias de veículos e
+          empresas do setor automotivo. Atuamos como <strong>provedor de tecnologia</strong>,
+          integrando e gerenciando mensagens do WhatsApp Business em nome das empresas que
+          contratam nossos serviços.
+        </p>
+
+        <h2>2. Nosso papel no tratamento de dados</h2>
+        <p>
+          A LGPD distingue o <strong>controlador</strong> (quem decide sobre o tratamento) do
+          <strong>operador</strong> (quem trata os dados em nome do controlador). Na nossa
+          operação, exercemos os dois papéis, em contextos diferentes:
+        </p>
+        <h3>Quando atuamos como operadora</h3>
+        <p>
+          Em relação aos dados dos <strong>clientes-finais</strong> — os consumidores que conversam
+          com uma concessionária pelo WhatsApp — a Amply IA atua como <strong>operadora</strong>. A
+          concessionária contratante é a <strong>controladora</strong> desses dados: é ela quem
+          determina as finalidades do atendimento e quem mantém a relação comercial com o
+          consumidor. Nós tratamos esses dados exclusivamente segundo as instruções da
+          concessionária e nos limites do contrato firmado.
+        </p>
+        <p>
+          Isso significa que, se você é um consumidor e deseja exercer seus direitos sobre dados
+          tratados em um atendimento, a solicitação pode ser dirigida tanto à concessionária com
+          quem você conversou quanto diretamente a nós — encaminharemos e apoiaremos o atendimento
+          do pedido.
+        </p>
+        <h3>Quando atuamos como controladora</h3>
+        <p>
+          Somos <strong>controladoras</strong> em relação aos dados cadastrais das empresas
+          contratantes e de seus representantes, aos dados de usuários do nosso painel
+          administrativo e aos dados de visitantes do nosso site institucional.
+        </p>
+
+        <h2>3. Quais dados coletamos</h2>
+        <h3>Dados de clientes-finais (consumidores)</h3>
+        <ul>
+          <li><strong>Dados de identificação:</strong> nome e número de telefone.</li>
+          <li>
+            <strong>Conteúdo das conversas:</strong> mensagens de texto trocadas com o atendimento.
+          </li>
+          <li>
+            <strong>Mensagens de áudio:</strong> áudios enviados no atendimento e sua respectiva
+            transcrição em texto.
+          </li>
+          <li>
+            <strong>Interesse comercial:</strong> veículos consultados, preferências informadas,
+            faixa de preço e histórico de interações.
+          </li>
+          <li>
+            <strong>Dados de simulação de financiamento:</strong> informações fornecidas
+            voluntariamente pelo consumidor para simulações, como valor de entrada, renda declarada
+            e prazo pretendido.
+          </li>
+          <li>
+            <strong>Dados de agendamento:</strong> data, horário e unidade da visita marcada.
+          </li>
+        </ul>
+        <p>
+          Não solicitamos, por iniciativa própria, dados pessoais sensíveis (art. 5º, II da LGPD),
+          como origem racial, convicção religiosa, opinião política ou dado biométrico. Caso o
+          consumidor envie espontaneamente esse tipo de informação em uma mensagem, ela será tratada
+          apenas para viabilizar o atendimento e ficará sujeita às mesmas medidas de segurança
+          descritas nesta política.
+        </p>
+        <h3>Dados das empresas contratantes</h3>
+        <ul>
+          <li>Razão social, CNPJ, endereço e dados de contato.</li>
+          <li>Nome, e-mail e credenciais de acesso dos usuários do painel.</li>
+          <li>Registros de uso da plataforma, como acessos e ações realizadas no sistema.</li>
+        </ul>
+        <h3>Dados de navegação no site</h3>
+        <p>
+          Nosso site institucional armazena, no seu navegador, apenas a preferência de idioma
+          escolhida, por meio de <em>local storage</em>. Não utilizamos cookies de publicidade nem
+          rastreamento de terceiros para perfilamento.
+        </p>
+
+        <h2>4. Como coletamos os dados</h2>
+        <ul>
+          <li>
+            <strong>Pela API do WhatsApp Business:</strong> quando o consumidor inicia ou responde
+            uma conversa com o número oficial de uma concessionária que utiliza nossa plataforma.
+          </li>
+          <li>
+            <strong>Pelo painel (CRM):</strong> quando a equipe da concessionária cadastra ou
+            atualiza informações de leads, veículos e agendamentos.
+          </li>
+          <li>
+            <strong>Por cadastro contratual:</strong> quando uma empresa contrata nossos serviços e
+            fornece seus dados cadastrais.
+          </li>
+        </ul>
+
+        <h2>5. Para que usamos os dados e com que base legal</h2>
+        <p>Tratamos dados pessoais para as seguintes finalidades e hipóteses legais:</p>
+        <ul>
+          <li>
+            <strong>Prestar o atendimento automatizado</strong> — responder mensagens, esclarecer
+            dúvidas e apresentar veículos.
+            <br />Base legal: execução de contrato e procedimentos preliminares a pedido do titular
+            (art. 7º, V).
+          </li>
+          <li>
+            <strong>Qualificar o interesse do consumidor</strong> — entender a necessidade e
+            direcionar o atendimento.
+            <br />Base legal: legítimo interesse do controlador (art. 7º, IX).
+          </li>
+          <li>
+            <strong>Agendar visitas e test-drives</strong> — organizar a agenda comercial.
+            <br />Base legal: execução de contrato ou procedimentos preliminares (art. 7º, V).
+          </li>
+          <li>
+            <strong>Realizar simulações de financiamento</strong> — calcular condições a pedido do
+            consumidor.
+            <br />Base legal: procedimentos preliminares a pedido do titular (art. 7º, V).
+          </li>
+          <li>
+            <strong>Enviar comunicações e campanhas promocionais</strong> — ofertas, novidades e
+            mensagens de relacionamento.
+            <br />Base legal: consentimento do titular (art. 7º, I), revogável a qualquer momento.
+          </li>
+          <li>
+            <strong>Garantir a segurança e prevenir fraudes</strong> — registros de acesso e
+            auditoria.
+            <br />Base legal: legítimo interesse (art. 7º, IX) e cumprimento de obrigação legal
+            (art. 7º, II).
+          </li>
+          <li>
+            <strong>Cumprir obrigações legais e regulatórias</strong> — inclusive guarda de
+            registros de aplicação, nos termos do Marco Civil da Internet.
+            <br />Base legal: cumprimento de obrigação legal ou regulatória (art. 7º, II).
+          </li>
+        </ul>
+
+        <h2>6. Compartilhamento com terceiros</h2>
+        <p>
+          <strong>Não vendemos dados pessoais.</strong> Compartilhamos informações apenas com os
+          prestadores de serviço necessários ao funcionamento da plataforma. Esses prestadores atuam
+          como <strong>operadores</strong> — tratam os dados por nossa conta e ordem, dentro do
+          escopo contratado, e não se tornam proprietários das informações.
+        </p>
+        <div class="card">
+          <div class="terceiro">
+            <h3>Meta Platforms <span class="tag">WhatsApp Business API</span></h3>
+            <p style="margin: 0">
+              Responsável pela infraestrutura de envio e recebimento das mensagens. O tratamento
+              pela Meta segue as políticas próprias da plataforma WhatsApp.
+            </p>
+          </div>
+          <div class="terceiro">
+            <h3>Anthropic <span class="tag">IA — Claude</span></h3>
+            <p style="margin: 0">
+              Processa o conteúdo das mensagens para interpretar a solicitação e gerar as respostas
+              do atendimento automatizado.
+            </p>
+          </div>
+          <div class="terceiro">
+            <h3>OpenAI <span class="tag">Whisper — transcrição</span></h3>
+            <p style="margin: 0">
+              Converte mensagens de áudio em texto, para que possam ser compreendidas e respondidas
+              pelo atendimento.
+            </p>
+          </div>
+          <div class="terceiro">
+            <h3>Supabase <span class="tag">Banco de dados</span></h3>
+            <p style="margin: 0">
+              Hospeda o banco de dados e o armazenamento criptografado de credenciais da plataforma.
+            </p>
+          </div>
+        </div>
+        <p>
+          Também poderemos compartilhar dados com a <strong>concessionária contratante</strong> a
+          quem o atendimento se destina, com autoridades públicas mediante requisição legal ou
+          ordem judicial, e com assessores jurídicos e contábeis quando estritamente necessário à
+          defesa de nossos direitos.
+        </p>
+
+        <h2>7. Transferência internacional de dados</h2>
+        <p>
+          Os prestadores listados acima possuem infraestrutura fora do Brasil, principalmente nos
+          Estados Unidos. Assim, parte do tratamento envolve
+          <strong>transferência internacional de dados pessoais</strong>, realizada nos termos dos
+          artigos 33 e seguintes da LGPD, mediante cláusulas contratuais e garantias de segurança
+          oferecidas por esses fornecedores. Ao utilizar a plataforma, o titular está ciente dessa
+          característica técnica do serviço.
+        </p>
+
+        <h2>8. Armazenamento e segurança</h2>
+        <p>
+          Adotamos medidas técnicas e administrativas para proteger os dados pessoais contra acessos
+          não autorizados, perda, alteração ou divulgação indevida. Entre elas:
+        </p>
+        <ul>
+          <li>
+            <strong>Criptografia de credenciais:</strong> tokens de acesso e chaves de integração
+            são armazenados de forma criptografada, em cofre dedicado (Supabase Vault), e nunca
+            ficam expostos em texto puro.
+          </li>
+          <li>
+            <strong>Isolamento entre clientes (multi-tenant):</strong> cada concessionária tem seus
+            dados segregados por políticas de segurança em nível de linha (Row Level Security). Uma
+            empresa não consegue, em nenhuma hipótese, acessar dados de outra.
+          </li>
+          <li>
+            <strong>Mascaramento de dados pessoais em registros:</strong> informações como telefone,
+            nome e CPF são mascaradas nos logs internos do sistema, de modo que não aparecem em
+            texto puro nos registros de diagnóstico.
+          </li>
+          <li>
+            <strong>Controle de acesso:</strong> autenticação individual por usuário, com registro
+            das ações realizadas no painel.
+          </li>
+          <li>
+            <strong>Tráfego criptografado:</strong> toda a comunicação com a plataforma ocorre por
+            conexão segura (HTTPS/TLS).
+          </li>
+        </ul>
+        <p>
+          Nenhum sistema é totalmente imune a incidentes. Caso ocorra um incidente de segurança
+          relevante que possa acarretar risco ou dano aos titulares, comunicaremos os titulares
+          afetados e a Autoridade Nacional de Proteção de Dados (ANPD), conforme o art. 48 da LGPD.
+        </p>
+
+        <h2>9. Por quanto tempo guardamos os dados</h2>
+        <p>
+          Mantemos os dados pessoais apenas pelo tempo necessário ao cumprimento das finalidades
+          para as quais foram coletados, observados os seguintes critérios:
+        </p>
+        <ul>
+          <li>
+            <strong>Dados de atendimento e histórico de conversas:</strong> enquanto durar a relação
+            contratual com a concessionária responsável, salvo solicitação de eliminação anterior.
+          </li>
+          <li>
+            <strong>Dados cadastrais de empresas contratantes:</strong> durante a vigência do
+            contrato e pelos prazos legais aplicáveis após o seu término.
+          </li>
+          <li>
+            <strong>Registros de acesso a aplicações:</strong> pelo prazo mínimo de 6 (seis) meses,
+            conforme o art. 15 do Marco Civil da Internet (Lei nº 12.965/2014).
+          </li>
+          <li>
+            <strong>Dados necessários a obrigações fiscais e à defesa em processos:</strong> pelos
+            prazos prescricionais previstos na legislação aplicável.
+          </li>
+        </ul>
+        <p>
+          Encerrado o prazo e a necessidade legal de guarda, os dados são eliminados ou
+          anonimizados.
+        </p>
+
+        <h2>10. Direitos do titular</h2>
+        <p>
+          Nos termos do art. 18 da LGPD, o titular de dados pessoais tem direito a, mediante
+          requisição:
+        </p>
+        <ul>
+          <li>Confirmar a existência de tratamento dos seus dados;</li>
+          <li>Acessar os dados que mantemos a seu respeito;</li>
+          <li>Corrigir dados incompletos, inexatos ou desatualizados;</li>
+          <li>
+            Solicitar a anonimização, o bloqueio ou a eliminação de dados desnecessários, excessivos
+            ou tratados em desconformidade com a lei;
+          </li>
+          <li>
+            Solicitar a portabilidade dos dados a outro fornecedor de serviço, observados os
+            segredos comercial e industrial;
+          </li>
+          <li>
+            Solicitar a eliminação dos dados tratados com base no consentimento, ressalvadas as
+            hipóteses de guarda obrigatória;
+          </li>
+          <li>
+            Obter informação sobre as entidades públicas e privadas com as quais compartilhamos
+            dados;
+          </li>
+          <li>
+            Ser informado sobre a possibilidade de não fornecer consentimento e sobre as
+            consequências da negativa;
+          </li>
+          <li>Revogar o consentimento a qualquer momento;</li>
+          <li>
+            Opor-se a tratamento realizado com fundamento em uma das hipóteses de dispensa de
+            consentimento, em caso de descumprimento da lei;
+          </li>
+          <li>
+            Solicitar a revisão de decisões tomadas unicamente com base em tratamento automatizado
+            que afetem seus interesses.
+          </li>
+        </ul>
+        <p>
+          Para interromper o recebimento de mensagens promocionais, basta responder solicitando o
+          descadastramento na própria conversa do WhatsApp — a solicitação é registrada e respeitada
+          nas comunicações seguintes.
+        </p>
+
+        <h2>11. Encarregado pelo tratamento de dados (DPO)</h2>
+        <p>
+          Para exercer qualquer dos direitos acima, esclarecer dúvidas sobre esta política ou
+          apresentar reclamações relativas ao tratamento de dados pessoais, entre em contato com
+          nosso encarregado:
+        </p>
+        <div class="card">
+          <div class="dados">
+            <p style="margin: 0"><span>Encarregado (DPO):</span> João Vitor Medeiros dos Santos</p>
+            <p style="margin: 0">
+              E-mail: <a href="mailto:joao@amplyia.com.br">joao@amplyia.com.br</a>
+            </p>
+            <p style="margin: 0">
+              Endereço: Rua Benedito Lopes Vieira, 144 — Vila Regina, Itapetininga/SP — CEP
+              18209-360
+            </p>
+          </div>
+        </div>
+        <p>
+          Responderemos às solicitações no menor prazo possível, observados os prazos legais.
+          Poderemos solicitar informações adicionais para confirmar a identidade do requerente antes
+          de atender ao pedido, como medida de segurança.
+        </p>
+        <p>
+          O titular também pode apresentar reclamação diretamente à
+          <strong>Autoridade Nacional de Proteção de Dados (ANPD)</strong>.
+        </p>
+
+        <h2>12. Alterações desta política</h2>
+        <p>
+          Esta Política de Privacidade pode ser atualizada a qualquer momento para refletir
+          mudanças na legislação, na plataforma ou nos nossos processos. A versão vigente estará
+          sempre disponível nesta página, com a respectiva data de vigência indicada no topo.
+          Alterações relevantes serão comunicadas às empresas contratantes pelos canais de contato
+          cadastrados.
+        </p>
+
+        <h2>13. Contato</h2>
+        <p>
+          Dúvidas sobre esta política podem ser enviadas para
+          <a href="mailto:joao@amplyia.com.br">joao@amplyia.com.br</a>.
+        </p>
+      </div>
+    </main>
+
+    <footer class="bottom">
+      <div class="wrap">
+        <nav>
+          <a href="/">Início</a>
+          <a href="/privacidade">Política de Privacidade</a>
+          <a href="/termos">Termos de Uso</a>
+        </nav>
+        <address>
+          59.736.692 JOAO VITOR MEDEIROS DOS SANTOS — CNPJ 59.736.692/0001-83<br />
+          Rua Benedito Lopes Vieira, 144 — Vila Regina, Itapetininga/SP — CEP 18209-360<br />
+          contato: <a href="mailto:joao@amplyia.com.br">joao@amplyia.com.br</a>
+        </address>
+      </div>
+    </footer>
+  </body>
+</html>
